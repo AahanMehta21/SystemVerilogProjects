@@ -1,0 +1,80 @@
+$date
+   Thu Jan 30 23:11:38 2025
+$end
+
+$version
+  2024.2.0
+  $dumpfile ("dump.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module test_bench $end
+$var reg 8 ! tb_val1 [7:0] $end
+$var reg 8 " tb_val2 [7:0] $end
+$var reg 1 # tb_c_in $end
+$var reg 8 $ tb_sum [7:0] $end
+$var reg 1 % tb_c_out $end
+$scope module adder1 $end
+$var wire 8 & val1 [7:0] $end
+$var wire 8 ' val2 [7:0] $end
+$var wire 1 ( c_in $end
+$var reg 8 $ sum [7:0] $end
+$var reg 1 % c_out $end
+$var reg 9 ) result [8:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+bx !
+bx "
+x#
+bx $
+x%
+bx &
+bx '
+x(
+bx )
+$end
+
+#1000
+b1 !
+b10 "
+1#
+b100 $
+0%
+b1 &
+b10 '
+1(
+b100 )
+
+#2000
+b1010 !
+b10100 "
+0#
+b11110 $
+b1010 &
+b10100 '
+0(
+b11110 )
+
+#3000
+b110111 !
+b1000010 "
+b1111001 $
+b110111 &
+b1000010 '
+b1111001 )
+
+#4000
+b11111111 !
+b1 "
+b0 $
+1%
+b11111111 &
+b1 '
+b100000000 )
